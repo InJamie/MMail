@@ -36,7 +36,10 @@ public class UserController {
         if (login!=null){
             session.setAttribute("user",login);
             url = "redirect:/";
-        }else url = "login";
+        }else {
+            url = "login";
+            session.setAttribute("flag","账号或密码有误！");
+        }
         return url;
     }
 
